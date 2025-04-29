@@ -114,5 +114,5 @@ gen_IDDR: for i in 0 to 7 generate
 -- TODO!! This line is not correct, you need to figure out the appropriate mapping of the 8 different Q1 bits and the 8
 -- different Q2 bits to make a 16 bit number.  Don't forget to invert the upper-most bit to take what was a number in 
 -- "offset binary" and turn it into a signed number.  
-ADC_DATA <= Q1 & Q2;
+    ADC_DATA <= (not Q1(7)) & Q2(7) & Q1(6) & Q2(6) & Q1(5) & Q2(5) & Q1(4) & Q2(4) & Q1(3) & Q2(3) & Q1(2) & Q2(2) & Q1(1) & Q2(1) & Q1(0) & Q2(0);
 end Behavioral;
